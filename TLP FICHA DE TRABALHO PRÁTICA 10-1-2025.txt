@@ -1,0 +1,95 @@
+TLP FICHA DE TRABALHO PRÁTICA 10-1-2025
+1.
+soma=0
+numero=0
+while numero<=100:
+    numero=int(input("Diz um numero, maior que 100 termina: "))
+    if numero>100:
+        print("Numero maior que 100, ERRO!")
+        continue
+    soma=soma+numero
+print ("A soma ficou em:",soma)
+
+-----------------------------------------------------------
+
+2.
+import random
+numero=0
+listanumeros=[]
+for i in range(10):
+    numerosagerar =(random.randint(1,10))
+    listanumeros.append(numerosagerar)
+while True:
+    numero=int(input("Diz um numero, de 0-10 "))
+    if numero<0 or numero>10:
+        print("Numero invalido, programa vai fechar")
+        break
+    for i in range(10):
+        if numero == listanumeros[i]:
+            print("acertaste um numero")
+print("a sequencia era: ",listanumeros)#quando eu acerto um numero que está na sequencia mais que uma vez, o programa manda o "acertaste" o numero de vezes que está na sequencia, nao sei se era suposto, mas tá fixe
+
+-----------------------------------------------------------
+
+3.
+grausfahrenheit=0
+grauscelcius=0
+grauscelcius=float(input("Graus Celcius, quantos ?"))
+grausfahrenheit = (grauscelcius*1.8) + 32
+print("Isso dá ",grausfahrenheit,"º Fahrenheit")
+
+----------------------------------------------------------
+
+4.
+horas = float(input("Insira o valor em horas: "))
+minutos = horas * 60
+segundos = horas * 3600
+print(" ",horas," horas equivalem a:")
+print("Isso são ",minutos," minutos")
+print("E também ",segundos," segundos")
+#not sure but i think that's it
+
+----------------------------------------------------------
+
+5.
+nmais25=0
+nmenos25=0
+vintecincos=0
+for i in range (10):
+    numero=int(input("Diz um numero: "))
+    if numero>25:
+        nmais25=nmais25+1
+    elif numero<25:
+        nmenos25=nmenos25+1
+    else:
+        vintecincos=vintecincos+1
+print("Foram contados",nmais25," numeros maiores que 25")
+print("Foram contados",nmenos25," numeros menores que 25")
+print("Escreveste ",vintecincos," 25's")
+
+---------------------------------------------------------
+
+6.
+soma=0
+vaisomando=0
+media=0
+while True:
+    numero=float(input("Diz um numero: "))
+    soma=soma+numero
+    if numero == 0:
+        break
+    print("A soma vai em ",soma)
+    vaisomando=vaisomando+1
+media = soma/vaisomando
+print("A soma terminou em ",soma)
+print("A media é ",media)
+-----------------------------------------------------------
+
+
+Tiago Dias Nº27 11ºP
+
+
+
+
+
+

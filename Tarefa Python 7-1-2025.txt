@@ -1,0 +1,22 @@
+Tarefa Python 7-1-2025
+1.
+soma = 0
+print("Diz um número")
+numero = float(input())
+soma += numero
+for i in range(14):
+    numero += 2.5
+    print(numero)
+    soma += numero
+media = soma / 15
+print(f"A média dos números é: {media}")
+
+2.
+soma = 0
+print("Quantos números queres?")
+n = int(input())
+for i in range(n):
+    print("Número:")
+    numero = int(input())
+    soma += numero
+print(f"A soma dos números é: {soma}")

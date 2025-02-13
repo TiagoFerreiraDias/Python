@@ -1,0 +1,24 @@
+Tarefa 2 - Python 7-1-2025
+1.
+soma = 0
+print("Vai dizendo números, 0 termina")
+while True:
+    numero = int(input())
+    if numero == 0:
+        break
+    soma += numero
+    print(f"a soma vai em: {soma}")
+
+
+2.
+import random
+num_aleatorio=random.randint(1,10)
+quantasleft=5
+for i in range(5):
+    print("Tenta adivinhar o numero(1-10)")
+    tentativa=int(input())
+    quantasleft=quantasleft-1
+    print(f"Tens {quantasleft}"+" tentativas")
+    if tentativa == num_aleatorio:
+        print("\nAcertaste!!!")
+        break
