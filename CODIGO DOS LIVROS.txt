@@ -1,0 +1,125 @@
+CODIGO DOS LIVROS
+
+carrinho = []
+biblioteca = {
+    "1984": 10.0,
+    "Hamlet": 15.0,
+    "Odisseia": 12.5,
+    "Frankenstein": 14.0,
+    "Drácula": 13.0
+}
+def mostrar_menu():
+    print("\n____MENU UTILIZADOR____:")
+    print("1 - ADICIONAR UM LIVRO AO CARRINHO")
+    print("2 - VER O CARRINHO")
+    print("3 - RETIRAR UM LIVRO DO CARRINHO")
+    print("4 - VER OS LIVROS QUE ESTÃO À VENDA")
+    print("5 - FINALIZAR A COMPRA")
+    print("6 - FECHAR O PROGRAMA")
+    print("\n____MENU ADMINISTRADOR____:")
+    print("7 - ADICIONAR/REMOVER LIVROS")
+    print("8 - ALTERAR PREÇO DE UM LIVRO\n")
+def adicionar_ao_carrinho():
+    print("Livros disponíveis:")
+    for livro in biblioteca:
+        print(livro)
+    qualivro = input("Qual livro queres adicionar? ")
+    if qualivro in biblioteca:
+        carrinho.append(qualivro)
+        print(qualivro, "foi adicionado ao carrinho.")
+    else:
+        print("Esse livro não existe!")
+def ver_carrinho():
+    if carrinho:
+        total = 0
+        print("Livros no carrinho:")
+        for livro in carrinho:
+            print(livro, "-", biblioteca[livro], "EUR")
+            total += biblioteca[livro]
+        print("Total:", total, "EUR")
+    else:
+        print("O carrinho está vazio.")
+def remover_do_carrinho():
+    if carrinho:
+        print("Livros no carrinho:")
+        for livro in carrinho:
+            print(livro)
+        qualremover = input("Qual livro queres retirar? ")
+        if qualremover in carrinho:
+            carrinho.remove(qualremover)
+            print(qualremover, "foi removido do carrinho.")
+        else:
+            print("Esse livro não está no carrinho.")
+    else:
+        print("O carrinho está vazio.")
+def ver_livros():
+    print("Livros disponíveis à venda:")
+    for livro in biblioteca:
+        print(livro, "-", biblioteca[livro], "EUR")
+def finalizar_compra():
+    if carrinho:
+        total = 0
+        print("Total da compra:")
+        for livro in carrinho:
+            print(livro, "-", biblioteca[livro], "EUR")
+            total += biblioteca[livro]
+        print("Total:", total, "EUR")
+        confirmacao = input("Confirmas a compra? (s/n): ")
+        if confirmacao.lower() == "s":
+            print("Compra finalizada! Obrigado!")
+            carrinho.clear()
+            exit()
+        else:
+            print("Compra cancelada.")
+    else:
+        print("O carrinho está vazio.")
+def gerir_biblioteca():
+    print("Livros atuais:")
+    for livro in biblioteca:
+        print(livro)
+    escolha = input("Queres adicionar ou remover um livro? (adicionar/remover): ")
+    if escolha.lower() == "adicionar":
+        novo_livro = input("Nome do novo livro: ")
+        preco = float(input("Preço do livro: "))
+        biblioteca[novo_livro] = preco
+        print("Livro", novo_livro, "adicionado por", preco, "EUR.")
+    elif escolha.lower() == "remover":
+        livro_remover = input("Nome do livro a remover: ")
+        if livro_remover in biblioteca:
+            del biblioteca[livro_remover]
+            print("Livro", livro_remover, "removido.")
+        else:
+            print("Esse livro não existe!")
+def alterar_preco():
+    print("Livros atuais e preços:")
+    for livro in biblioteca:
+        print(livro, "-", biblioteca[livro], "EUR")
+    livro_alterar = input("Qual livro queres alterar o preço? ")
+    if livro_alterar in biblioteca:
+        novo_preco = float(input("Novo preço: "))
+        biblioteca[livro_alterar] = novo_preco
+        print("Preço de", livro_alterar, "alterado para", novo_preco, "EUR.")
+    else:
+        print("Esse livro não existe!")
+oqfazer = 0
+while oqfazer != 6:
+    mostrar_menu()
+    oqfazer = int(input("Escolha uma opção: "))
+    if oqfazer == 1:
+        adicionar_ao_carrinho()
+    elif oqfazer == 2:
+        ver_carrinho()
+    elif oqfazer == 3:
+        remover_do_carrinho()
+    elif oqfazer == 4:
+        ver_livros()
+    elif oqfazer == 5:
+        finalizar_compra()
+    elif oqfazer == 6:
+        print("Programa encerrado.")
+    elif oqfazer == 7:
+        gerir_biblioteca()
+    elif oqfazer == 8:
+        alterar_preco()
+    else:
+        print("Escolha um número entre 1 e 8.")
